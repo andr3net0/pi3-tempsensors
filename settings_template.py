@@ -3,11 +3,11 @@
 # getTemps script switches
 APIPOST = True # change to enable/disable api posting
 VERBOSE = True # change to enable/disable verbose output
-LOOP  = False # change to false you just want one reading then exit
-DELAY = 10 # number of seconds between readings (if running in loop mode)
+TEMPWARN = True # change to enable/disable Siren/Beacon output
 
 # API Settings
 URL = 'your api endpoint url'
+URL_LIMTS = 'your api endpoint url - get temperature limits'
 API_KEY = 'your api key'
 PI_KEY = 'your pi serial'
 
@@ -30,3 +30,7 @@ CS   = 26
 
 # Door sensors 
 DOOR_PINS = [22,5]
+
+# Siren/Beacon
+WARN_PIN = 21
+SIGNAL_TIME = 5

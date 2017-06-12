@@ -1,10 +1,13 @@
 ### please confirm the /home/pi/pi3-tempsensors-master path
 
+# get temperature limits
+@reboot cd /home/pi/pi3-tempsensors-master; python getLimitsAPI.py >> logs/master.log & 
+
 # run master script - collect, save at DB; post to API
 */5 * * * * cd /home/pi/pi3-tempsensors-master; python master.py >> logs/master.log &
 
 # start if not running the assync detection of doors
-* * * * * cd /home/pi/pi3-tempsensors-master; ps -ef|grep -v grep|grep runDoorsDetect.py || python runDoorsDetect.py >> logs/runDoorsDetect.log &
+* * * * * cd /home/pi/pi3-tempsensors-master; ps -ef|grep -v grep|grep runDoorsDetect.py || python runDoorsDetect.py &
 
 # logrotate
 59 * * * * cd /home/pi/pi3-tempsensors-master; sudo logrotate ./logrotate.conf 

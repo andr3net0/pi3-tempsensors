@@ -40,7 +40,7 @@ def readDHT():
         if humidity > 120:
             humidity, temperature = None, None
         values.append(('H-'+str(pin)+'@'+str(serial),humidity,'humidity'))
-        values.append(('H-'+str(pin)+'@'+str(serial),temperature,'temperature'))
+        values.append(('T-'+str(pin)+'@'+str(serial),temperature,'temperature'))
         
     return values
 

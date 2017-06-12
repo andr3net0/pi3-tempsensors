@@ -13,6 +13,7 @@ try:
     import putDataDB
     import putDataAPI
     import settings
+    import setWarning
 except  Exception, e:
     print e
     print "Main: Could not perform import"
@@ -22,6 +23,7 @@ try:
     serial = settings.PI_KEY
     APIPOST = settings.APIPOST
     verbose = settings.VERBOSE
+    tempwarn = settings.TEMPWARN
 except Exception, e:
     "Main: Could not read settings"
     print e
@@ -77,6 +79,10 @@ if APIPOST:
         putDataDB.cleanData()
         print datetime.datetime.now().strftime('%H:%M:%S')
 
+if tempwarn:
+    print '\tset Warning'
+    setWarning.setWarn(data)
+    print datetime.datetime.now().strftime('%H:%M:%S')
 
 print "End master.py"
 print
