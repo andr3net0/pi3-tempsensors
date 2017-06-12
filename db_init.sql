@@ -23,6 +23,9 @@ CREATE TABLE read_idx(
    table_idx INTEGER
 );
 
+INSERT INTO read_idx (table_name,table_idx) VALUES ('measure',0);
+/* COMMIT; */
+
 CREATE TABLE params(
    name TEXT PRIMARY KEY,
    type TEXT,
