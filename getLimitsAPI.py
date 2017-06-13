@@ -44,8 +44,7 @@ def getFromUrl(key):
         limitsJson = response.text
         
     else:
-        limitsJson = '{"28-0416939897ff@f4a833c5":{"min":"0","max":"25"},"28-03168b09c3ff@f4a833c5":{"min":"0","max":"25"}}'
-        #return response.status_code
+        return response.status_code
     
     try:
         limits = json.loads(limitsJson)
